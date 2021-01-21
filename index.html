@@ -4,6 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <!-- <link rel="stylesheet" href="style.css"> -->
-</head>
+  <script language="JavaScript">
+    function showMode() {
+      document.getElementById('modeDisplay').innerHTML =
+        document.getElementById("Mode").value;
+    }
+    function showRN() {
+      document.getElementById('RNdisplay').innerHTML =
+        document.getElementById("RN").value;
+    }
+  </script>
+  
+  </head>
 
+<body>
 <p class='title'>Displayer</p>
+<p id='tagline'>Put some stuff here.</p>
+
+
+<form onsubmit="return setAction(this)">
+  Mode:
+  <input type="text" name="Mode" id="Mode">
+  <br/>
+  Root Note:
+  <input type="text" name="RN" id="RN">
+  <br/>
+</form>
+
+<br/>
+
+<input type="submit" onclick="showMode();"><br />
+<label>Mode: </label>
+
+<p><span id='modeDisplay'></span></p>
+
+<input type="submit" onclick="showRN();"><br />
+<label>RN: </label>
+
+<p><span id='RNdisplay'></span></p>
+
+
+</body>
+
