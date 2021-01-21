@@ -14,6 +14,13 @@
         document.getElementById("RN").value;
     }
   </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
+<script>
+  function showNotes() {
+    document.getElementById('notesDisplay').innerHTML = Tonal.Mode.notes(document.getElementById("Mode").value, document.getElementById("RN").value); //('major', 'C1')
+  }
+</script>
   
   </head>
 
@@ -33,7 +40,8 @@
 
 <br/>
 
-<input type="submit" onclick="showMode(); showRN();"><br /> 
+<input type="submit" onclick="showMode(); showRN(); showNotes();"><br /> 
+
 <label>Mode: </label>
 
 <p><span id='modeDisplay'></span></p>
@@ -41,6 +49,12 @@
 <label>RN: </label>
 
 <p><span id='RNdisplay'></span></p>
+
+<label>Notes: </label>
+
+<p><span id='notesDisplay'></span></p>
+
+
 
 
 </body>
