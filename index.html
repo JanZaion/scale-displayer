@@ -1,45 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
 
-<script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
-<script>
-  function showNotes() {
-    document.getElementById('notesDisplay').innerHTML = Tonal.Mode.notes(document.getElementById("Mode").value, document.getElementById("RN").value); //('major', 'C1') //Tonal.note.simplify
-  }
-</script>
-  
-  </head>
+  <script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
+  <script>
+    function showNotes() {
+      document.getElementById('notesDisplay').innerHTML = Tonal.Mode.notes(document.getElementById("Mode").value, document.getElementById("RN").value); //('major', 'C1') //Tonal.note.simplify
+    }
+  </script>
+
+</head>
 
 <body>
-<p class='title'>Note Displayer</p>
-<p class='instructions'>Put mode and root note here</p>
+  <p class='title'>Note Displayer</p>
+  <p class='instructions'>Put mode and root note here</p>
 
-<div class='instructions'>
-<form onsubmit="return setAction(this)"></form>
-  
-  Root Note:
-  <input type="text" name="RN" id="RN">
-  <br/>
-  Mode:
-  <input type="text" name="Mode" id="Mode">
-  <br/>
-</form>
-</div>
+  <div class='instructions'>
+    <form onsubmit="return setAction(this)"></form>
 
-<div class='button'>
-<input  type="submit" value="Show" onclick="showNotes();"><br /> 
-</div>
+    Root Note:
+    <!--<input type="text" name="RN" id="RN"> -->
+    <input list="Notes" name="RN" id="RN">
+    <datalist id="Notes">
+      <option value="C">
+      <option value="C#">
+      <option value="Cb">
+      <option value="D">
+      <option value="D#">
+      <option value="Db">
+      <option value="E">
+      <option value="Eb">
+      <option value="F">
+      <option value="F#">
+      <option value="G">
+      <option value="G#">
+      <option value="Gb">
+      <option value="A">
+      <option value="A#">
+      <option value="Ab">
+      <option value="B">
+      <option value="Bb">
+    </datalist>
+    <br />
+    Mode:
+    <input list="Modes" name="Mode" id="Mode">
+    <datalist id="Modes">
+      <option value='major'>
+      <option value='minor'>
+      <option value='ionian'>
+      <option value='dorian'>
+      <option value='phrygian'>
+      <option value='lydian'>
+      <option value='mixolydian'>
+      <option value='aeolian'>
+      <option value='locrian'>
+    </datalist>
+    <br />
+    </form>
+  </div>
 
-<!-- <p><span class='notesDisplay'></span></p> -->
-<div class='displayPart'>
-<p>here we show notes</p>
-<p><span id='notesDisplay'></span></p>
-</div>
+  <div class='button'>
+    <input type="submit" value="Show" onclick="showNotes();"><br />
+  </div>
+
+  <!-- <p><span class='notesDisplay'></span></p> -->
+  <div class='displayPart'>
+    <p>here we show them notes</p>
+    <p><span id='notesDisplay'></span></p>
+  </div>
 
 
 </body>
-
