@@ -1,0 +1,25 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #3c48b4;
+  color: rgb(209, 209, 209);
+}
+.title{
+    font-size: 36px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 0;
+    color: #141c3a;
+    color: rgb(209, 209, 209);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+.instructions{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #141c3a;
+    letter-spacing: 1px;
+  }
