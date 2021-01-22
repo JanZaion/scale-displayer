@@ -21,5 +21,21 @@ body{
     font-size: 18px;
     margin-top: 15px;
     color: #141c3a;
+    color: rgb(209, 209, 209);
+    letter-spacing: 1px;
+  }
+.button{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #141c3a;
+    letter-spacing: 1px;
+  }
+.displayPart{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #141c3a;
+    color: rgb(209, 209, 209);
     letter-spacing: 1px;
   }

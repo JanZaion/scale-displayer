@@ -8,7 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
 <script>
   function showNotes() {
-    document.getElementById('notesDisplay').innerHTML = Tonal.Mode.notes(document.getElementById("Mode").value, document.getElementById("RN").value); //('major', 'C1')
+    document.getElementById('notesDisplay').innerHTML = Tonal.Mode.notes(document.getElementById("Mode").value, document.getElementById("RN").value); //('major', 'C1') //Tonal.note.simplify
   }
 </script>
   
@@ -18,25 +18,27 @@
 <p class='title'>Note Displayer</p>
 <p class='instructions'>Put mode and root note here</p>
 
-
-<form class='instructions' onsubmit="return setAction(this)">
-  Mode:
-  <input type="text" name="Mode" id="Mode">
-  <br/>
+<div class='instructions'>
+<form onsubmit="return setAction(this)"></form>
+  
   Root Note:
   <input type="text" name="RN" id="RN">
   <br/>
+  Mode:
+  <input type="text" name="Mode" id="Mode">
+  <br/>
 </form>
+</div>
 
-<br/>
+<div class='button'>
+<input  type="submit" value="Show" onclick="showNotes();"><br /> 
+</div>
 
-<input type="submit" onclick="showNotes();"><br /> 
-
-<label>Notes: </label>
-
+<!-- <p><span class='notesDisplay'></span></p> -->
+<div class='displayPart'>
+<p>here we show notes</p>
 <p><span id='notesDisplay'></span></p>
-
-
+</div>
 
 
 </body>
