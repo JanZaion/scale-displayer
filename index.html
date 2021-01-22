@@ -8,7 +8,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
   <script>
     function showNotes() {
-      document.getElementById('notesDisplay').innerHTML = Tonal.Mode.notes(document.getElementById("Mode").value, document.getElementById("RN").value); //('major', 'C1') //Tonal.note.simplify
+      const notesArray = Tonal.Mode.notes(document.getElementById("Mode").value, document.getElementById("RN").value)
+      const displayArray = []
+      notesArray.forEach(element => { displayArray.push(Tonal.Note.simplify(element)) } )
+      document.getElementById('notesDisplay').innerHTML = displayArray;
     }
   </script>
 
