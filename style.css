@@ -39,3 +39,49 @@ body{
     color: rgb(209, 209, 209);
     letter-spacing: 1px;
   }
+
+  /* the piano part starts here */
+  .piano{
+    width: 285px;
+    height: 210px;
+    display: block;
+    margin: 0 auto;
+    background-color: #3c48b4;
+    margin-top: 30px;
+  }
+  .key{
+    width: 30px;
+    height: 200px;
+    display: inline-block;
+    border: solid #141c3a 2px;
+    box-shadow: 2px 5px;
+    background-color: white;
+    color: #141c3a;
+  }
+  .black-key{
+    width: 25px;
+    height: 100px;
+    display: inline-block;
+    background-color: #141c3a;
+    color: white;
+    position: absolute;
+    margin-left: -12px;
+    padding: 0px;
+  }
+  .keynote{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 175px;
+    color: #141c3a;
+  }
+  .black-keynote{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 75px;
+  }
