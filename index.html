@@ -29,10 +29,10 @@
       enharmonicArray.forEach(element => { if(document.getElementById(element).className == "key") {document.getElementById(element).style.backgroundColor = '#FFCF26'} else {document.getElementById(element).style.backgroundColor = '#A68204'} })
     }
 
+    //We change the pianoroll key colors to the nonhighlighted ones
     function cleanKeys() {
-      Array.from(document.getElementsByClassName("key")).forEach(element => {element.style.backgroundColor = 'white'}) //element.style.backgroundColor = '#0011A6'
+      Array.from(document.getElementsByClassName("key")).forEach(element => {element.style.backgroundColor = 'white'})
       Array.from(document.getElementsByClassName("black-key")).forEach(element => {element.style.backgroundColor = '#141c3a'})
-      //document.getElementsByClassName("black-key").style.backgroundColor = '#0011A6'
     }
   </script>
 
