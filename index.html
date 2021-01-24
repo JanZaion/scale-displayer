@@ -13,19 +13,39 @@
       notesArray.forEach(element => { displayArray.push(Tonal.Note.simplify(element)) } )
       document.getElementById('notesDisplay').innerHTML = displayArray;
     }
+    /* 
+    How we display notes on the piano roll:
+    1. Pull the notes from tonal
+    2. Manipulate the array so that it covers enharmonics like b->#
+    3. Highlight the appropriate keys
+    */
+    function highlightKeys() {
+      const notesArray = Tonal.Mode.notes(document.getElementById("Mode").value, document.getElementById("RN").value)
+      const simplifiedArray = []
+      notesArray.forEach(element => { simplifiedArray.push(Tonal.Note.simplify(element)) } )
+      const enharmonicArray = []
+      simplifiedArray.forEach(element => { if(element.indexOf('b') !== -1) {enharmonicArray.push(Tonal.Note.enharmonic(element))} else {enharmonicArray.push(element)} } )
+      
+      enharmonicArray.forEach(element => { if(document.getElementById(element).className == "key") {document.getElementById(element).style.backgroundColor = '#FFCF26'} else {document.getElementById(element).style.backgroundColor = '#A68204'} })
+    }
+
+    function cleanKeys() {
+      Array.from(document.getElementsByClassName("key")).forEach(element => {element.style.backgroundColor = 'white'}) //element.style.backgroundColor = '#0011A6'
+      Array.from(document.getElementsByClassName("black-key")).forEach(element => {element.style.backgroundColor = '#141c3a'})
+      //document.getElementsByClassName("black-key").style.backgroundColor = '#0011A6'
+    }
   </script>
 
 </head>
 
 <body>
   <p class='title'>Note Displayer</p>
-  <p class='instructions'>Put mode and root note here</p>
+  <p class='instructions'>Put mode and root note here and then yellow color is your master</p>
 
   <div class='instructions'>
     <form onsubmit="return setAction(this)"></form>
 
     Root Note:
-    <!--<input type="text" name="RN" id="RN"> -->
     <input list="Notes" name="RN" id="RN">
     <datalist id="Notes">
       <option value="C">
@@ -66,7 +86,7 @@
   </div>
 
   <div class='button'>
-    <input type="submit" value="Show" onclick="showNotes();"><br />
+    <input type="submit" value="Show" onclick="showNotes(); cleanKeys(); highlightKeys();"><br />
   </div>
 
   <div class='displayPart'>
@@ -75,40 +95,40 @@
   </div>
 
   <section class="piano">
-    <section id='c-key' class="key">
+    <section id='C' class="key">
       <section class='keynote'>C</section>
     </section>
-    <section id='c-sharp-key' class="black-key">
+    <section id='C#' class="black-key">
       <section class='black-keynote'>C#</section>
     </section>
-    <section id='d-key' class="key">
+    <section id='D' class="key">
       <section class='keynote'>D</section>
     </section>
-    <section id='d-sharp-key' class="black-key">
+    <section id='D#' class="black-key">
       <section class='black-keynote'>D#</section>
     </section>
-    <section id='e-key' class="key">
+    <section id='E' class="key">
       <section class='keynote'>E</section>
     </section>
-    <section id='f-key' class="key">
+    <section id='F' class="key">
       <section class='keynote'>F</section>
     </section>
-    <section id='f-sharp-key' class="black-key">
+    <section id='F#' class="black-key">
       <section class='black-keynote'>F#</section>
     </section>
-    <section id='g-key' class="key">
+    <section id='G' class="key">
       <section class='keynote'>G</section>
     </section>
-    <section id='g-sharp-key' class="black-key">
+    <section id='G#' class="black-key">
       <section class='black-keynote'>G#</section>
     </section>
-    <section id='a-key' class="key">
+    <section id='A' class="key">
       <section class='keynote'>A</section>
     </section>
-    <section id='a-sharp-key' class="black-key">
+    <section id='A#' class="black-key">
       <section class='black-keynote'>A#</section>
     </section>
-    <section id='b-key' class="key">
+    <section id='B' class="key">
       <section class='keynote'>B</section>
     </section>
     
