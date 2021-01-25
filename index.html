@@ -7,12 +7,16 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
   <script>
+    // We dont need to display this
+    /*
     function showNotes() {
       const notesArray = Tonal.Mode.notes(document.getElementById("Mode").value, document.getElementById("RN").value)
       const displayArray = []
       notesArray.forEach(element => { displayArray.push(Tonal.Note.simplify(element)) } )
       document.getElementById('notesDisplay').innerHTML = displayArray;
     }
+    */
+    
     /* 
     How we display notes on the piano roll:
     1. Pull the notes from tonal
@@ -86,11 +90,10 @@
   </div>
 
   <div class='button'>
-    <input type="submit" value="Show" onclick="showNotes(); cleanKeys(); highlightKeys();"><br />
+    <input type="submit" value="Show" onclick="cleanKeys(); highlightKeys();"><br />
   </div>
 
   <div class='displayPart'>
-    <p>here we show them notes</p>
     <p><span id='notesDisplay'></span></p>
   </div>
 
